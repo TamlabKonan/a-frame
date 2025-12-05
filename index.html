@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>A-Frame Quest 3 移動</title>
+<head>
+    <title>A-Frame Quest 3 移動 - 修正版</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <a-scene>
 
-      <a-entity id="rig"
-        position="0 1.6 0"
-        movement-controls="speed: 0.1; fly: false;">       
-        <a-camera></a-camera>
-        <a-entity
-          oculus-touch-controls="hand: right"
-          laser-controls></a-entity>
+        <a-entity id="rig"
+            position="0 1.6 0"
+            movement-controls="speed: 0.1; fly: false">
+            
+            <a-camera></a-camera>
 
-        <a-entity
-          oculus-touch-controls="hand: left"
-          laser-controls></a-entity>
-          
-      </a-entity>
+            <a-entity oculus-touch-controls="hand: right"></a-entity>
+            <a-entity oculus-touch-controls="hand: left"></a-entity>
+              
+        </a-entity>
 
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+        <a-box position="-1 0.5 -3" color="#F44336"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#FFEB3B"></a-sphere>
+        
+        <a-plane rotation="-90 0 0" width="20" height="20" color="#4CAF50"></a-plane>
+        <a-sky color="#87CEEB"></a-sky>
 
     </a-scene>
-  </body>
+</body>
 </html>
-
