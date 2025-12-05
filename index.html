@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>A-Frame Quest 3 移動 - 入力明示版</title>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <title>A-Frame Quest 3 移動 （左スティックで移動します）</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> 
     
+    <!-- aframe-extras：追加のコンポーネント（movement-controlsなど）を提供するライブラリ -->
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
 </head>
 <body>
     <a-scene>
+        <!-- movement-controls：VR空間内での移動を制御するコンポーネント
+        speed: 0.1：移動速度（0.1は比較的ゆっくりとした速度）
+        fly: false：飛行モードを無効化（地面に沿って移動）
+        controls: 使用可能なコントロール方式を指定
+        - oculus-touch：Oculus Touchコントローラー
+        - thumbstick：スティック操作
+        - wasd：キーボードのWASDキー -->
 
         <a-entity id="rig"
             position="0 1.6 0"
-            
             movement-controls="
                 speed: 0.1; 
                 fly: false;
-                
-                controls: 
-                    oculus-touch,  thumbstick,    wasd           "
+                controls: oculus-touch,thumbstick,wasd"
             wasd-controls="enabled: true;"> 
             
+            <!-- カメラ：ユーザーの視点を定義（rigの子要素として配置） -->
             <a-camera></a-camera>
 
+            <!-- 右側のOculus Touchコントローラー
+                 oculus-touch-controls：コントローラーのモデルと機能を有効化
+                 hand: right：右手用コントローラー
+                 model: true：コントローラーの3Dモデルを表示
+                 laser-controls：レーザーポインター機能を有効化（UI操作などに使用） -->
             <a-entity oculus-touch-controls="hand: right; model: true;" laser-controls="hand: right"></a-entity>
+            
+            <!-- 左側のOculus Touchコントローラー
+                 hand: left：左手用コントローラー
+                 左スティックで移動操作が可能 -->
             <a-entity oculus-touch-controls="hand: left; model: true;" laser-controls="hand: left"></a-entity>
               
         </a-entity>
 
         <a-box position="-1 0.5 -3" color="#F44336"></a-box>
         <a-plane rotation="-90 0 0" width="20" height="20" color="#4CAF50"></a-plane>
+        
+        <!-- 空（スカイボックス）：背景として使用 color="#87CEEB"：空色（Sky Blue） -->
         <a-sky color="#87CEEB"></a-sky>
 
     </a-scene>
