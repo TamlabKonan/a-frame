@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>A-Frame Quest 3 移動 - A-Frame Extras修正版</title>
+    <title>A-Frame Quest 3 移動 - 入力明示版</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
@@ -12,7 +12,12 @@
         <a-entity id="rig"
             position="0 1.6 0"
             
-            movement-controls="speed: 0.1; fly: false"
+            movement-controls="
+                speed: 0.1; 
+                fly: false;
+                
+                controls: 
+                    oculus-touch,  thumbstick,    wasd           "
             wasd-controls="enabled: true;"> 
             
             <a-camera></a-camera>
