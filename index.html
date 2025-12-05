@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>A-Frame Quest 3 移動 - 最終確認版</title>
+    <title>A-Frame Quest 3 移動 - A-Frame Extras修正版</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
 </head>
 <body>
     <a-scene>
@@ -15,20 +17,12 @@
             
             <a-camera></a-camera>
 
-            <a-entity 
-                oculus-touch-controls="hand: right; model: true;"
-                laser-controls="hand: right"
-            ></a-entity>
-
-            <a-entity 
-                oculus-touch-controls="hand: left; model: true;"
-                laser-controls="hand: left"
-            ></a-entity>
+            <a-entity oculus-touch-controls="hand: right; model: true;" laser-controls="hand: right"></a-entity>
+            <a-entity oculus-touch-controls="hand: left; model: true;" laser-controls="hand: left"></a-entity>
               
         </a-entity>
 
         <a-box position="-1 0.5 -3" color="#F44336"></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#FFEB3B"></a-sphere>
         <a-plane rotation="-90 0 0" width="20" height="20" color="#4CAF50"></a-plane>
         <a-sky color="#87CEEB"></a-sky>
 
