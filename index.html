@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>A-Frame Quest 3 移動 - 入力明示版</title>
-    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
-</head>
-<body>
+  <head>
+    <title>Introduction</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> <!--A-frame読み込み-->
+  </head>
+  <body>
     <a-scene>
 
-        <a-entity id="rig"
-            position="0 1.6 0"
-            
-            movement-controls="
-                speed: 0.1; 
-                fly: false;
-                
-                controls: 
-                    oculus-touch,  thumbstick,    wasd           "
-            wasd-controls="enabled: true;"> 
-            
-            <a-camera></a-camera>
-
-            <a-entity oculus-touch-controls="hand: right; model: true;" laser-controls="hand: right"></a-entity>
-            <a-entity oculus-touch-controls="hand: left; model: true;" laser-controls="hand: left"></a-entity>
-              
-        </a-entity>
-
-        <a-box position="-1 0.5 -3" color="#F44336"></a-box>
-        <a-plane rotation="-90 0 0" width="20" height="20" color="#4CAF50"></a-plane>
-        <a-sky color="#87CEEB"></a-sky>
-
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> 
+      <!--箱を1つ作ります．position, rotationは移動，回転，colorは16進数で書かれていて，2桁でR, G, Bを表します．00が最小，FFが最大です．-->
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
-</body>
+  </body>
 </html>
-
